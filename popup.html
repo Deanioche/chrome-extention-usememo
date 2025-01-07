@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UseMemo</title>
+  <style>
+    textarea {
+      width: 400px;
+      height: 400px;
+      resize: none;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      font-family: 'Nanum Gothic', sans-serif;
+    }
+
+    #footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    #save-status {
+      color: #28a112;
+      font-weight: bold;
+    }
+  </style>
+  <script src='popup.js'></script>
+</head>
+<body>
+  <div>
+    <textarea id="memo-content" placeholder="Write memo..."></textarea>
+    <div id="footer">
+      <span id="site-domain">-</span>
+      <span id="save-status"></span>
+    </div>
+  </div>
+</body>
+</html>
