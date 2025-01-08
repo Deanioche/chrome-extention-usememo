@@ -1,6 +1,12 @@
 ## UseMemo
 
-"permissions": ["tabs"],
-를 줘야 하는 이유
+> UseMemo is a chrome extension that enable you leave a memo on the webpage.
 
-ActiveTabs는 탭 전환시 익텐 아이콘을 클릭하기 전까진 현재 사이트에 메모가 있는지 없는지 알 수 없다.
+📕 Note-Taking for Each Webpage: Write and save notes linked to specific webpages with a single click. Pages with saved notes are visually marked by a color change in the extension icon.
+
+⚒️ Easy Note Management: Right-click the icon → Open "Manage Data" to view, delete, or export all saved notes as a CSV file.
+
+🛡️ Data Security: Notes are stored locally in your browser’s IndexedDB, ensuring no external access.
+
+https://www.youtube.com/watch?v=AmAML_X4LG4
+
