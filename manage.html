@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .memo-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      position: relative;
+    }
+
+    .memo-item h3 {
+      margin: 0 0 5px 0;
+      color: #555;
+      cursor: pointer;
+    }
+
+    .memo-item h3:hover {
+      text-decoration: underline;
+    }
+
+    .memo-item textarea {
+      margin: 0;
+      color: #666;
+      width: 100%;
+      height: 200px;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      border: none;
+      resize: none;
+      background-color: #f9f9f9
+    }
+
+    .delete-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background-color: #ff4d4d;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #export {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Manage Data</h1>
+  <button id='export'>Export All</button>
+  <div id='memo-list'></div>
+  <script src='manage.js'></script>
+</body>
+
+</html>

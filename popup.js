@@ -39,6 +39,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   };
 
+  memoContent.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      e.target.value = e.target.value.substring(0, e.target.selectionStart) + '\t' + e.target.value.substring(e.target.selectionEnd);
+    }
+  });
+
   memoContent.addEventListener('input', () => saveMemoToDB(domain, memoContent.value).then(() => {
     saveStatus.textContent = `${memoContent.value.length} letters Saved`;
 

@@ -13,7 +13,7 @@
     "default_title": "UseMemo",
     "default_popup": "popup.html"
   },
-  "permissions": ["tabs"],
+  "permissions": ["tabs", "contextMenus"],
   "background": {
     "service_worker": "background.js"
   }

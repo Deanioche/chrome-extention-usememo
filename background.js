@@ -1,9 +1,28 @@
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message == 'checkMemoAndUpdateIcon') {
-    const { tabId, url } = message;
-    checkMemoAndUpdateIcon(tabId, url);
+chrome.runtime.onInstalled.addListener(() => {
+  // 우클릭 메뉴 추가
+  chrome.contextMenus.create({
+    id: "openManager",
+    title: "Manage Data",
+    contexts: ["action"], // 아이콘 우클릭 시만 표시
+  });
+});
+
+// 메뉴 클릭 이벤트 핸들러
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId === "openManager") {
+    // 전체 보기 페이지 열기
+    chrome.tabs.create({
+      url: chrome.runtime.getURL("manage.html"), // 확장 내부 페이지
+    });
   }
 });
+
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//   if (message == 'checkMemoAndUpdateIcon') {
+//     const { tabId, url } = message;
+//     checkMemoAndUpdateIcon(tabId, url);
+//   }
+// });
 
 chrome.tabs.onActivated.addListener((activeInfo) => {
   chrome.tabs.get(activeInfo.tabId, (tab) => {
@@ -11,6 +30,12 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
       checkMemoAndUpdateIcon(activeInfo.tabId, tab.url);
     }
   });
+});
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  if (changeInfo.url) {
+    checkMemoAndUpdateIcon(tabId, changeInfo.url);
+  }
 });
 
 function checkMemoAndUpdateIcon(tabId, url) {
